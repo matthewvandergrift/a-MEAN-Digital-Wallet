@@ -1,7 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
 
+@NgModule({
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
 @Component({
   selector: 'contact-details',
   templateUrl: './contact-details.component.html',

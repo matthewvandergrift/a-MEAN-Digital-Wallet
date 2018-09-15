@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
-import { ContactDetailsComponent } from '../contact-details/contact-details.component';
+//import { ContactDetailsComponent } from '../contact-details/contact-details.component';
+
+@NgModule({
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
 
 @Component({
   selector: 'contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css'],
-  providers: [ContactService]
+  providers: [ContactService],
 })
 
 export class ContactListComponent implements OnInit {
