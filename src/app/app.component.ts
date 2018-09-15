@@ -1,10 +1,15 @@
-import { Component, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+
+@NgModule({
+  schemas:[NO_ERRORS_SCHEMA]
+})
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent {
   title = 'MEAN Contacts';
 }

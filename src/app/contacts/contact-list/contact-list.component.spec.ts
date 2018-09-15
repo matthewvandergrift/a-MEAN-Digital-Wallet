@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { ContactListComponent } from './contact-list.component';
+import { ContactService} from '../contact.service';
 
 describe('ContactListComponent', () => {
   let component: ContactListComponent;
@@ -8,7 +11,15 @@ describe('ContactListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactListComponent ]
+      providers:[ContactService],
+      declarations: [ ContactListComponent ],
+      imports: [
+        FormsModule,
+        HttpModule
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ],
     })
     .compileComponents();
   }));

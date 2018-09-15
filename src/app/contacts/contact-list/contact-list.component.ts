@@ -1,10 +1,10 @@
-import { Component, OnInit, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
 //import { ContactDetailsComponent } from '../contact-details/contact-details.component';
 
 @NgModule({
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 
 @Component({

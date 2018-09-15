@@ -1,11 +1,16 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { ContactService } from './contact.service';
 
 describe('ContactService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ContactService]
+      providers:[ContactService],
+      imports: [
+        FormsModule,
+        HttpModule
+      ],
     });
   });
 
