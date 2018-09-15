@@ -16,7 +16,10 @@ app.use(express.static(distDir));
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test", function (err, client) {
+const dbURI = 
+"mongodb://Admin:M0ng0db1358@mongo-shard-00-00-qlmmr.mongodb.net:27017,mongo-shard-00-01-qlmmr.mongodb.net:27017,mongo-shard-00-02-qlmmr.mongodb.net:27017/test?ssl=true&replicaSet=Mongo-shard-0&authSource=admin&retryWrites=true";
+
+mongodb.MongoClient.connect(process.env.MONGODB_URI || dbURI, function (err, client) {
   if (err) {
     console.log(err);
     process.exit(1);
