@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
-var CONTACTS_COLLECTION = "cards";
+var CARDS_COLLECTION = "cards";
 
 var app = express();
 app.use(bodyParser.json());
@@ -50,7 +50,7 @@ function handleError(res, reason, message, code) {
  */
 
 app.get("/api/cards", function(req, res) {
-  db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
+  db.collection(CARDS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get cards.");
     } else {
@@ -66,7 +66,7 @@ app.post("/api/cards", function(req, res) {
   if (!req.body.name) {
     handleError(res, "Invalid user input", "Must provide a name.", 400);
   } else {
-    db.collection(CONTACTS_COLLECTION).insertOne(newCard, function(err, doc) {
+    db.collection(CARDS_COLLECTION).insertOne(newCard, function(err, doc) {
       if (err) {
         handleError(res, err.message, "Failed to create new card.");
       } else {
@@ -83,7 +83,7 @@ app.post("/api/cards", function(req, res) {
  */
 
 app.get("/api/cards/:id", function(req, res) {
-  db.collection(CONTACTS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+  db.collection(CARDS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get card");
     } else {
@@ -95,19 +95,18 @@ app.get("/api/cards/:id", function(req, res) {
 app.put("/api/cards/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
-
-  db.collection(CONTACTS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
+  db.collection(CARDS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, {$set: {name: updateDoc.name, memberSince: updateDoc.memberSince, info: updateDoc.info}}, {upsert:true}, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to update card");
     } else {
-      doc._id = req.params.id;
-      res.status(200).json(doc);
+      updateDoc._id = req.params.id;
+      res.status(200).json(updateDoc);
     }
   });
 });
 
 app.delete("/api/cards/:id", function(req, res) {
-  db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+  db.collection(CARDS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete card");
     } else {
