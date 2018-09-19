@@ -11,19 +11,15 @@
       <input class="form-control" name="card-name" [(ngModel)]="card.name" placeholder="Name"/>
     </div>
     <div class="form-group">
-      <label for="card-memberSince">Member Since</label>
-      <input class="form-control" name="card-memberSince" [(ngModel)]="card.memberSince" placeholder="Member Since 2018"/>
-    </div>
-    <div class="form-group">
       <label for="card-info-number">Card Number</label>
       <input class="form-control" name="card-info-number" [(ngModel)]="card.info.number" placeholder="1234-5678-9012-3456"/>
     </div>
     <div class="form-group">
-      <label for="card-info-expiration">Expiration</label>
+      <label for="card-info-expiration">Expiration Date</label>
       <input class="form-control" name="card-info-expiration" [(ngModel)]="card.info.expiration" placeholder="01/23"/>
     </div>
     <div class="form-group">
-      <label for="card-info-cvv">CVV</label>
+      <label for="card-info-cvv">CVV Code</label>
       <input class="form-control" name="card-info-cvv" [(ngModel)]="card.info.cvv" placeholder="012"/>
     </div>
     <button class="btn btn-primary" *ngIf="!card._id" (click)="createCard(card)">Create</button>

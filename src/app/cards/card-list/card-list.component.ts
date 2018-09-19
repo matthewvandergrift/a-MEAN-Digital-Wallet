@@ -50,7 +50,6 @@ export class CardListComponent implements OnInit {
   createNewCard() {
     var card: Card = {
       name: '',
-      memberSince: '',
       info: {
         number: '',
         expiration: '',

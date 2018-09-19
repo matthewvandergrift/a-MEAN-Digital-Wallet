@@ -95,7 +95,7 @@ app.get("/api/cards/:id", function(req, res) {
 app.put("/api/cards/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
-  db.collection(CARDS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, {$set: {name: updateDoc.name, memberSince: updateDoc.memberSince, info: updateDoc.info}}, {upsert:true}, function(err, doc) {
+  db.collection(CARDS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, {$set: {name: updateDoc.name, info: updateDoc.info}}, {upsert:true}, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to update card");
     } else {
