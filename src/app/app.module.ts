@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
-import { ContactListComponent } from './contacts/contact-list/contact-list.component';
-import { ContactService } from './contacts/contact.service';
+import { CardDetailsComponent } from './cards/card-details/card-details.component';
+import { CardListComponent } from './cards/card-list/card-list.component';
+import { CardService } from './cards/card.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactDetailsComponent,
-    ContactListComponent
+    CardDetailsComponent,
+    CardListComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import { ContactService } from './contacts/contact.service';
     HttpModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [ContactService],
+  providers: [CardService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

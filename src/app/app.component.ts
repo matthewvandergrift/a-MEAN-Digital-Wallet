@@ -11,5 +11,5 @@ import { Component, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'MEAN Contacts';
+  title = 'MEAN Cards';
 }

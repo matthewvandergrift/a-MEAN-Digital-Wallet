@@ -1,12 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { ContactService } from './contact.service';
+import { CardService } from './card.service';
 
-describe('ContactService', () => {
+describe('CardService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers:[ContactService],
+      providers:[CardService],
       imports: [
         FormsModule,
         HttpModule
@@ -14,7 +14,7 @@ describe('ContactService', () => {
     });
   });
 
-  it('should ...', inject([ContactService], (service: ContactService) => {
+  it('should ...', inject([CardService], (service: CardService) => {
     expect(service).toBeTruthy();
   }));
 });

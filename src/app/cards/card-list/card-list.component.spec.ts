@@ -2,17 +2,17 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { ContactListComponent } from './contact-list.component';
-import { ContactService} from '../contact.service';
+import { CardListComponent } from './card-list.component';
+import { CardService} from '../card.service';
 
-describe('ContactListComponent', () => {
-  let component: ContactListComponent;
-  let fixture: ComponentFixture<ContactListComponent>;
+describe('CardListComponent', () => {
+  let component: CardListComponent;
+  let fixture: ComponentFixture<CardListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers:[ContactService],
-      declarations: [ ContactListComponent ],
+      providers:[CardService],
+      declarations: [ CardListComponent ],
       imports: [
         FormsModule,
         HttpModule
@@ -25,7 +25,7 @@ describe('ContactListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactListComponent);
+    fixture = TestBed.createComponent(CardListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

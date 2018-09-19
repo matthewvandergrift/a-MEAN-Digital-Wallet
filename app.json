@@ -1,14 +1,14 @@
 {
-  "name": "MEAN Contact List",
-  "description": "Example contact list app using MEAN",
+  "name": "MEAN Digital Wallet",
+  "description": "A MongoDB, Express, Angular & Node small application where the users can save their credit card details and retrieve them whenever needed.",
   "keywords": [
     "MEAN",
-    "Angular",
-    "Node",
     "MongoDB",
-    "mLab"
+    "Express",
+    "Angular",
+    "Node"
   ],
-  "repository": "https://github.com/chrisckchang/mean-contactlist-angular2",
+  "repository": "https://matthewvandergrift.visualstudio.com/a%20MEAN%20Digital%20Wallet/_git/a%20MEAN%20Digital%20Wallet",
   "success_url": "/",
   "formation": {
     "web": {

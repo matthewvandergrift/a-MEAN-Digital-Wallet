@@ -26,16 +26,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'MEAN Contacts'`, async(() => {
+  it(`should have as title 'MEAN Cards'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('MEAN Contacts');
+    expect(app.title).toEqual('MEAN Cards');
   }));
 
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('MEAN Contacts');
+    expect(compiled.querySelector('h1').textContent).toContain('MEAN Cards');
   }));
 });

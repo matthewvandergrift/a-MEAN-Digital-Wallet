@@ -1,8 +1,4 @@
 
-# Mean Contactlist Angular2
+# MEAN Digital Wallet
 
-Contact List is a RESTful API server and web application built with the MEAN (Angular 2) stack. It is a simple example that aims to concisely demonstrate basic MEAN and REST architecture. You can find the full tutorial here: https://devcenter.heroku.com/articles/mean-apps-restful-api.
-
-You can deploy a live copy of this application to Heroku with the button below.
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/chrisckchang/mean-contactlist-angular2)
+A MongoDB, Express, Angular & Node small application where the users can save their credit card details and retrieve them whenever needed. https://matthewvandergrift.visualstudio.com/a%20MEAN%20Digital%20Wallet

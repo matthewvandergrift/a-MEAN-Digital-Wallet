@@ -1,5 +1,5 @@
 {
-  "name": "mean-contactlist-angular2",
+  "name": "mean-digital-wallet",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -28,6 +28,7 @@
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "mongodb": "^3.1.1",
+    "nodemon": "^1.18.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
